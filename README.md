@@ -7,3 +7,7 @@ Abyss Studio is a work-in-progress slated to become an entire RPG development ki
 You can follow the development blog at the [Abyss Blog][blog]
 
 [blog]: http://abyssengine.com
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/danarmstrong/abyss-studio/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
