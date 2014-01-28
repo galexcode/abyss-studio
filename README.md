@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/danarmstrong/abyss-studio.png?label=ready)](https://waffle.io/danarmstrong/abyss-studio)
 Abyss Studio
 ============
 
