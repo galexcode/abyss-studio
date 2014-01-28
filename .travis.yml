@@ -1,1 +1,2 @@
 language: java
+install: ant -Dbootstrap.url=.../tasks.jar -Dautoupdate.catalog.url=.../updates.xml
