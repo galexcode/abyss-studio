@@ -21,14 +21,13 @@ import org.openide.filesystems.FileObject;
 import org.openide.filesystems.FileUtil;
 import org.openide.util.Exceptions;
 import org.openide.util.NbBundle.Messages;
-import org.openide.util.lookup.InstanceContent;
 
 @ActionID(
         category = "Project",
         id = "org.abyss.project.actions.OpenProjectAction"
 )
 @ActionRegistration(
-        iconBase = "org/abyss/project/actions/open-project.png",
+        iconBase = "org/abyss/project/icons/open.png",
         displayName = "#CTL_OpenProjectAction"
 )
 @ActionReferences({

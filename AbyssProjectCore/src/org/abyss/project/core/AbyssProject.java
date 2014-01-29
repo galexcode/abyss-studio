@@ -68,7 +68,7 @@ public class AbyssProject implements Project {
     private final class Info implements ProjectInformation {
 
         @StaticResource()
-        public static final String ABYSS_ICON = "org/abyss/project/icons/abyss-16.png";
+        public static final String ABYSS_ICON = "org/abyss/project/icons/project.png";
 
         @Override
         public Icon getIcon() {
@@ -105,7 +105,7 @@ public class AbyssProject implements Project {
     class AbyssProjectLogicalView implements LogicalViewProvider {
 
         @StaticResource()
-        public static final String ABYSS_ICON = "org/abyss/project/icons/abyss-16.png";
+        public static final String ABYSS_ICON = "org/abyss/project/icons/project.png";
 
         private final AbyssProject project;
 

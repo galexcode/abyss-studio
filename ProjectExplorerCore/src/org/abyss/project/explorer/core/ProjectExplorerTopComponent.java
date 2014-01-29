@@ -62,6 +62,8 @@ public final class ProjectExplorerTopComponent extends TopComponent implements L
         associateLookup(ExplorerUtils.createLookup(explorerManager, getActionMap()));
         //explorerManager.setRootContext(new AbstractNode(new CategoryChildren()));
         explorerManager.getRootContext().setDisplayName("Untitled Game");
+        
+        
 
     }
 
@@ -86,7 +88,8 @@ public final class ProjectExplorerTopComponent extends TopComponent implements L
     @Override
     public void componentOpened() {
         System.err.println("Component opened");
-        result = Utilities.actionsGlobalContext().lookupResult(AbyssProject.class);
+        //result = Utilities.actionsGlobalContext().lookupResult(AbyssProject.class);
+        result = Utilities.actionsGlobalContext().lookup(new Lookup.Template(AbyssProject.class));
         result.addLookupListener(this);
     }
 
