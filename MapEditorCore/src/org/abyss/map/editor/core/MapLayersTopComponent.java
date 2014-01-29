@@ -40,8 +40,7 @@ public final class MapLayersTopComponent extends TopComponent {
     public MapLayersTopComponent() {
         initComponents();
         setName(Bundle.CTL_MapLayersTopComponent());
-        setToolTipText(Bundle.HINT_MapLayersTopComponent());
-
+        setToolTipText(Bundle.HINT_MapLayersTopComponent());        
     }
 
     /**
@@ -54,6 +53,8 @@ public final class MapLayersTopComponent extends TopComponent {
 
         scrollPane = new javax.swing.JScrollPane();
         layerList = new javax.swing.JList();
+        jToolBar1 = new javax.swing.JToolBar();
+        jButton1 = new javax.swing.JButton();
 
         layerList.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Overlay", "Default", "Ground", "Parallax", " " };
@@ -62,25 +63,38 @@ public final class MapLayersTopComponent extends TopComponent {
         });
         scrollPane.setViewportView(layerList);
 
+        jToolBar1.setFloatable(false);
+        jToolBar1.setRollover(true);
+
+        org.openide.awt.Mnemonics.setLocalizedText(jButton1, org.openide.util.NbBundle.getMessage(MapLayersTopComponent.class, "MapLayersTopComponent.jButton1.text")); // NOI18N
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                .addComponent(scrollPane)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JList layerList;
     private javax.swing.JScrollPane scrollPane;
     // End of variables declaration//GEN-END:variables
