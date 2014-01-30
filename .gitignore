@@ -1,4 +1,4 @@
 dist/
 build/
-./**/build
-/ProjectExplorerCore/nbproject/private/
+/**/build
+/**/nbproject/private/
