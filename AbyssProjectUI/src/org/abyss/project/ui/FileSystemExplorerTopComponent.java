@@ -64,16 +64,13 @@ public final class FileSystemExplorerTopComponent extends TopComponent
         for(File path: paths) {
             try {
                 explorerManager.setRootContext(
-                        NodeFactory.getNode(FileUtil.toFileObject(path))
+                        DataObject.find(FileUtil.toFileObject(path)).getNodeDelegate()
                 );
             } catch (DataObjectNotFoundException ex) {
                 Exceptions.printStackTrace(ex);
             }
         }
         
-        
-        //explorerManager.setRootContext(new AbstractNode(null));
-        //explorerManager.getRootContext().setDisplayName("Marilyn Monroe's Movies");
     }
 
     /**

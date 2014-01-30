@@ -29,9 +29,9 @@ public class DirectoryObjectNode extends AbstractNode {
         node = DataObject.find(fileObject).getNodeDelegate();
         
         ArrayList<Node> nodeList = new ArrayList<Node>();
-        for (Node n: node.getChildren().getNodes()) {
-            System.out.println("Add child!");
-            nodeList.add(NodeFactory.getNode((n.getLookup().lookup(DataObject.class)).getPrimaryFile()));
+        for (FileObject fo: fileObject.getChildren()) {
+            if(fo.canWrite() && !fo.getName().startsWith("."))
+                nodeList.add(NodeFactory.getNode(fo));
         }
         Node[] childNodes = new Node[nodeList.size()];
         childNodes = nodeList.toArray(childNodes);
