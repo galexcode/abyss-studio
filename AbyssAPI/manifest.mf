@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.abyss.api
+OpenIDE-Module-Localizing-Bundle: org/abyss/api/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
