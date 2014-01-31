@@ -2,6 +2,10 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ *//*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package org.abyss.project.ui;
 
@@ -23,34 +27,34 @@ import org.openide.windows.TopComponent;
  * Top component which displays something.
  */
 @ConvertAsProperties(
-        dtd = "-//org.abyss.project.ui//AbyssProject//EN",
+        dtd = "-//org.abyss.project.ui//ProjectExplorer//EN",
         autostore = false
 )
 @TopComponent.Description(
-        preferredID = "AbyssProjectTopComponent",
+        preferredID = "ProjectExplorerTopComponent",
         iconBase = "org/abyss/project/ui/icons/project.png",
         persistenceType = TopComponent.PERSISTENCE_ALWAYS
 )
 @TopComponent.Registration(mode = "explorer", openAtStartup = true)
-@ActionID(category = "Window", id = "org.abyss.project.ui.AbyssProjectTopComponent")
+@ActionID(category = "Window", id = "org.abyss.project.ui.ProjectExplorerTopComponent")
 @ActionReference(path = "Menu/Window" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
-        displayName = "#CTL_AbyssProjectAction",
-        preferredID = "AbyssProjectTopComponent"
+        displayName = "#CTL_ProjectExplorerAction",
+        preferredID = "ProjectExplorerTopComponent"
 )
 @Messages({
-    "CTL_AbyssProjectAction=AbyssProject",
-    "CTL_AbyssProjectTopComponent=AbyssProject Window",
-    "HINT_AbyssProjectTopComponent=This is a AbyssProject window"
+    "CTL_ProjectExplorerAction=ProjectExplorer",
+    "CTL_ProjectExplorerTopComponent=ProjectExplorer Window",
+    "HINT_ProjectExplorerTopComponent=This is a ProjectExplorer window"
 })
-public final class AbyssProjectTopComponent extends TopComponent implements LookupListener {
+public final class ProjectExplorerTopComponent extends TopComponent implements LookupListener {
     private final transient ExplorerManager explorerManager = new ExplorerManager();
     private Lookup.Result<AbyssProject> result = null;
     
-    public AbyssProjectTopComponent() {
+    public ProjectExplorerTopComponent() {
         initComponents();
-        setName(Bundle.CTL_AbyssProjectTopComponent());
-        setToolTipText(Bundle.HINT_AbyssProjectTopComponent());
+        setName(Bundle.CTL_ProjectExplorerTopComponent());
+        setToolTipText(Bundle.HINT_ProjectExplorerTopComponent());
         
         associateLookup(ExplorerUtils.createLookup(explorerManager, getActionMap()));
 
@@ -115,6 +119,17 @@ public final class AbyssProjectTopComponent extends TopComponent implements Look
     
     @Override
     public void resultChanged(LookupEvent le) {
+        /*
+        Collection<? extends Event> allEvents = result.allInstances();
+        if (!allEvents.isEmpty()) {
+            Event event = allEvents.iterator().next();
+            jLabel1.setText(Integer.toString(event.getIndex()));
+            jLabel2.setText(event.getDate().toString());
+        } else {
+            jLabel1.setText("[no selection]");
+            jLabel2.setText("");
+        }
+        */
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
