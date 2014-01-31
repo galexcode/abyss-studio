@@ -21,6 +21,8 @@ import org.openide.util.LookupEvent;
 import org.openide.util.LookupListener;
 import org.openide.util.NbBundle.Messages;
 import org.openide.util.Utilities;
+import org.openide.util.lookup.AbstractLookup;
+import org.openide.util.lookup.InstanceContent;
 import org.openide.windows.TopComponent;
 
 /**
@@ -47,15 +49,16 @@ import org.openide.windows.TopComponent;
     "CTL_ProjectExplorerTopComponent=ProjectExplorer Window",
     "HINT_ProjectExplorerTopComponent=This is a ProjectExplorer window"
 })
-public final class ProjectExplorerTopComponent extends TopComponent implements LookupListener {
-    private final transient ExplorerManager explorerManager = new ExplorerManager();
+public final class ProjectExplorerTopComponent extends TopComponent implements LookupListener, ExplorerManager.Provider {
+    private final ExplorerManager explorerManager = new ExplorerManager();
+    private final InstanceContent content = new InstanceContent();
     private Lookup.Result<AbyssProject> result = null;
     
     public ProjectExplorerTopComponent() {
         initComponents();
         setName(Bundle.CTL_ProjectExplorerTopComponent());
         setToolTipText(Bundle.HINT_ProjectExplorerTopComponent());
-        
+        associateLookup(new AbstractLookup(content));
         associateLookup(ExplorerUtils.createLookup(explorerManager, getActionMap()));
 
     }
@@ -68,25 +71,19 @@ public final class ProjectExplorerTopComponent extends TopComponent implements L
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rootPanel = new javax.swing.JPanel();
-        explorerView = new BeanTreeView();
         editorToolbar = new javax.swing.JToolBar();
+        explorerView = new BeanTreeView();
 
         setLayout(new java.awt.BorderLayout());
 
-        rootPanel.setLayout(new java.awt.GridLayout(1, 1));
-        rootPanel.add(explorerView);
-
-        add(rootPanel, java.awt.BorderLayout.CENTER);
-
         editorToolbar.setRollover(true);
         add(editorToolbar, java.awt.BorderLayout.SOUTH);
+        add(explorerView, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToolBar editorToolbar;
     private javax.swing.JScrollPane explorerView;
-    private javax.swing.JPanel rootPanel;
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
