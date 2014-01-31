@@ -59,7 +59,7 @@ public final class ProjectExplorerTopComponent extends TopComponent implements L
         setName(Bundle.CTL_ProjectExplorerTopComponent());
         setToolTipText(Bundle.HINT_ProjectExplorerTopComponent());
         associateLookup(new AbstractLookup(content));
-        associateLookup(ExplorerUtils.createLookup(explorerManager, getActionMap()));
+        //associateLookup(ExplorerUtils.createLookup(explorerManager, getActionMap()));
 
     }
 
